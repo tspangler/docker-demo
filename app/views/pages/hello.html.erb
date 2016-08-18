@@ -1,2 +1,22 @@
 <h1><%= @greeting %>, Docker!</h1>
 <p>I am a page.</p>
+
+<p>Showing <%= pluralize(@pages.count, 'page') %>.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Content</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% @pages.each do |page| %>
+		<tr>
+			<td><%= page.title %></td>
+			<td><%= page.content %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
